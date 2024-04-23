@@ -12,7 +12,7 @@ pipeline {
 
         stage('Création d\'une image ams-backend') {
             steps {
-                sh 'docker build -f backend/Dockerfile-sp -t ams-backend .'
+                sh 'docker build -f Dockerfile-sp -t ams-backend ./backend/'
             }
         }
 
@@ -49,7 +49,7 @@ pipeline {
 
         stage('Création d\'une image ams-frontend') {
             steps {
-                sh 'docker build  -f frontend/Dockerfile-ang -t ams-frontend .'
+                sh 'docker build  -f Dockerfile-ang -t ams-frontend ./frontend/'
             }
         }
 
