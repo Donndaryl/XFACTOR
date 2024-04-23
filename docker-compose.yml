@@ -1,13 +1,13 @@
 # Docker Compose 
-version: '3.3'
+version: '3.4'
 
 # Define services
 services:
   # Backend service
   ams_rest:
-    image: saria15/ams-backend
+    image: donndaryl/ams-backend
     ports:
-      - "8080:8080" 
+      - "8090:8080" 
     container_name: ams_back2024
     restart: always
     depends_on:
@@ -23,7 +23,7 @@ services:
 
   # Frontend Service 
   ams_front:
-    image: saria15/ams-frontend
+    image: donndaryl/ams-frontend
     container_name: ams_front2024
     ports:
       - "8070:80" 
