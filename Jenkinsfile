@@ -12,23 +12,23 @@ pipeline {
 
         stage('Creation d\'une image ams-backend') {
             steps {
-                sh 'docker build -t ams-backend ./amsBack'
+                bat 'docker build -t ams-backend ./amsBack'
             }
         }
 
-        stage('tag and push image ams-backend to dockerhub') {
+        stage('tag and pubat image ams-backend to dockerhub') {
 
                     steps {
 
-                    echo "tag and push image ..."
+                    echo "tag and pubat image ..."
 
-                    sh "docker tag ams-backend donndaryl/ams-backend"
+                    bat "docker tag ams-backend donndaryl/ams-backend"
 
-                    sh "docker login -u $DOCKERHUB_CREDENTIALS_USR -p  $DOCKERHUB_CREDENTIALS_PSW"
+                    bat "docker login -u $DOCKERHUB_CREDENTIALS_USR -p  $DOCKERHUB_CREDENTIALS_PSW"
 
-                    sh "docker push donndaryl/ams-backend"
+                    bat "docker pubat donndaryl/ams-backend"
 
-                    sh "docker logout"
+                    bat "docker logout"
 
                     }
 
@@ -49,23 +49,23 @@ pipeline {
 
         stage('Creation d\'une image ams-frontend') {
             steps {
-                sh 'docker build -t ams-frontend ./amsFront'
+                bat 'docker build -t ams-frontend ./amsFront'
             }
         }
 
-        stage('tag and push image ams-frontend to dockerhub') {
+        stage('tag and pubat image ams-frontend to dockerhub') {
 
                     steps {
 
-                    echo "tag and push image ..."
+                    echo "tag and pubat image ..."
 
-                    sh "docker tag ams-frontend donndaryl/ams-frontend"
+                    bat "docker tag ams-frontend donndaryl/ams-frontend"
 
-                    sh "docker login -u $DOCKERHUB_CREDENTIALS_USR -p  $DOCKERHUB_CREDENTIALS_PSW"
+                    bat "docker login -u $DOCKERHUB_CREDENTIALS_USR -p  $DOCKERHUB_CREDENTIALS_PSW"
 
-                    sh "docker push donndaryl/ams-frontend"
+                    bat "docker pubat donndaryl/ams-frontend"
 
-                    sh "docker logout"
+                    bat "docker logout"
 
                     }
 
@@ -85,7 +85,7 @@ pipeline {
 
         stage('Docker-compose') {
             steps {
-                sh 'docker compose -f docker-compose.yml up -d'
+                bat 'docker compose -f docker-compose.yml up -d'
             }
         }
     
