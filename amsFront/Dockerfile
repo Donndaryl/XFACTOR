@@ -1,7 +1,7 @@
 # Étape 1 : Étape de construction
 
 # Utilise la version 16 de Node.js comme image de base pour l'étape de construction.
-FROM node:16 AS build
+FROM node:18 AS build
 
 # Définit le répertoire de travail à /app à l'intérieur du conteneur.
 WORKDIR /app         
