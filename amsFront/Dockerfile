@@ -25,3 +25,5 @@ FROM nginx:latest
 
 # Copie l'application construite de l'étape de construction vers le répertoire de service nginx.
 COPY --from=build /app/dist/* /usr/share/nginx/html/ 
+
+RUN npm run start
