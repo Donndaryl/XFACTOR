@@ -24,4 +24,5 @@ RUN npm run build  --prod
 FROM nginx:latest
 
 # Copie l'application construite de l'étape de construction vers le répertoire de service nginx.
-COPY --from=build /app/dist/browser* /usr/share/nginx/html/ 
+COPY --from=build /app/dist/browser/* /usr/share/nginx/html/ 
+
