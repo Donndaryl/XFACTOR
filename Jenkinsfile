@@ -20,13 +20,13 @@ pipeline {
 
                     steps {
 
-                    echo "tag and pubat image ..."
+                    echo "tag and push image ..."
 
                     bat "docker tag ams-backend donndaryl/ams-backend"
 
                     bat "docker login -u $DOCKERHUB_CREDENTIALS_USR -p  $DOCKERHUB_CREDENTIALS_PSW"
 
-                    bat "docker pubat donndaryl/ams-backend"
+                    bat "docker push donndaryl/ams-backend"
 
                     bat "docker logout"
 
@@ -53,7 +53,7 @@ pipeline {
             }
         }
 
-        stage('tag and pubat image ams-frontend to dockerhub') {
+        stage('tag and push image ams-frontend to dockerhub') {
 
                     steps {
 
@@ -63,7 +63,7 @@ pipeline {
 
                     bat "docker login -u $DOCKERHUB_CREDENTIALS_USR -p  $DOCKERHUB_CREDENTIALS_PSW"
 
-                    bat "docker pubat donndaryl/ams-frontend"
+                    bat "docker push donndaryl/ams-frontend"
 
                     bat "docker logout"
 
